@@ -1,0 +1,102 @@
+MENU02   DFHMSD TYPE=DSECT,MODE=INOUT,TERM=ALL,STORAGE=AUTO,LANG=COBOL  
+*                        
+MAP02    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1,COLOR=GREEN,HILIGHT=OFF,  X
+               MAPATTS=(COLOR,HILIGHT),DSATTS=HILIGHT,CTRL=FREEKB
+         DFHMDF POS=(01,01),LENGTH=06,ATTRB=(PROT,NORM),COLOR=BLUE,    X
+               INITIAL='MENU01'
+         DFHMDF POS=(01,65),LENGTH=15,ATTRB=(PROT,NORM),COLOR=BLUE,    X
+               INITIAL='DATE:10/12/2023'
+         DFHMDF POS=(02,65),LENGTH=15,ATTRB=(PROT,NORM),COLOR=BLUE,    X
+               INITIAL='TIME:          '
+         DFHMDF POS=(04,20),LENGTH=28,ATTRB=(PROT,NORM),COLOR=RED,     X
+               INITIAL='CREDIT SCORE EVALUATION FORM'
+
+         DFHMDF POS=(05,01),LENGTH=12,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='CUSTOMER NO:'
+CTNO     DFHMDF POS=(05,14),LENGTH=16,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(05,30),LENGTH=01,ATTRB=(ASKIP)
+         DFHMDF POS=(05,40),LENGTH=14,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='CUSTOMER NAME:'
+CTNA     DFHMDF POS=(05,55),LENGTH=22,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(05,78),LENGTH=01,ATTRB=(ASKIP)
+
+         DFHMDF POS=(06,01),LENGTH=08,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='EVAL DT:'
+CTA1     DFHMDF POS=(06,10),LENGTH=11,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(06,22),LENGTH=01,ATTRB=(ASKIP)
+         DFHMDF POS=(06,24),LENGTH=12,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='(DD/MM/YYYY)'
+
+
+         DFHMDF POS=(07,01),LENGTH=56,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='How many total accounts do you have? (open and X
+	       closed) :'
+PHNO     DFHMDF POS=(07,58),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(07,60),LENGTH=01,ATTRB=(ASKIP)
+         DFHMDF POS=(08,01),LENGTH=70,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='(credit cards, retail cards, auto loans, mortgaX
+	       ge loans, student loans, etc.)'
+
+
+         DFHMDF POS=(09,01),LENGTH=70,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='How many of your accounts are presently late inX
+	       Paying for > 30 days :'
+PHNO     DFHMDF POS=(09,72),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(09,74),LENGTH=01,ATTRB=(ASKIP)
+
+
+         DFHMDF POS=(10,01),LENGTH=70,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='How many credit cards or loans have you appliedX
+	        for in the last 2 years :'
+PHNO     DFHMDF POS=(10,72),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(10,74),LENGTH=01,ATTRB=(ASKIP)
+
+
+
+         DFHMDF POS=(11,01),LENGTH=70,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='Excluding your mortgage, how many open installmX
+	       ent loans do you have:'
+PHNO     DFHMDF POS=(11,72),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(11,74),LENGTH=01,ATTRB=(ASKIP)
+
+
+         DFHMDF POS=(12,01),LENGTH=40,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='How many open credit cards do you have :'
+PHNO     DFHMDF POS=(12,42),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(12,44),LENGTH=01,ATTRB=(ASKIP)
+
+         DFHMDF POS=(13,01),LENGTH=64,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='What is the total credit limit on all of your oX
+	       pen credit cards:'
+PHNO     DFHMDF POS=(13,66),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(13,68),LENGTH=01,ATTRB=(ASKIP)
+
+         DFHMDF POS=(14,01),LENGTH=59,ATTRB=(NORM,PROT),COLOR=GREEN,   X
+               INITIAL='What is the total balance on all of your open cX
+	       redit cards:'
+PHNO     DFHMDF POS=(14,61),LENGTH=01,ATTRB=(NORM,UNPROT,IC),          X
+               COLOR=TURQUOISE,HILIGHT=UNDERLINE
+         DFHMDF POS=(14,63),LENGTH=01,ATTRB=(ASKIP)
+
+
+
+
+
+
+
+         DFHMDF POS=(21,01),LENGTH=04,ATTRB=(PROT,NORM),COLOR=BLUE,    X
+               INITIAL='MSG:'
+MSG02    DFHMDF POS=(21,07),LENGTH=73,ATTRB=(PROT,BRT),COLOR=NEUTRAL    
+         DFHMDF POS=(24,01),LENGTH=50,ATTRB=(PROT,NORM),COLOR=BLUE,    X
+               INITIAL='F1=HELP  F3=EXIT  F4=ADD FORM  F9=MAIN MENU'                                       
+         DFHMSD TYPE=FINAL                                              
+         END 
